@@ -5,15 +5,34 @@ import Search from "./components/Search/Search";
 import Card from "./components/Card/Card";
 import Pagination from "./components/Pagination/Pagination";
 import Filter from "./components/Filter/Filter";
-//import Navbar from "./components/Navbar/Navbar";
-//import Footer from "./components/Footer/Footer"
-
+import Navbar from "./components/Navbar/Navbar";
+import CardDetails from "./components/Card/CardDetails";
+//import Footer from "./components/Footer/Footer";
+import Episodes from "./Pages/Episodes"
+import Location from "./Pages/Location";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 function App() {
+  return (
+    <Router>
+    <div className="App">
+      <Navbar />
+    </div>
+    <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/episodes" element={<Episodes />} />
+          <Route path="/location" element={<Location />} />
+          <Route path="/:id" element={<CardDetails />} />
+          <Route path="/episodes/:id" element={<CardDetails />} />
+          <Route path="/location/:id" element={<CardDetails />} />
+      </Routes>
+      </Router>
+  );
+}
 
-  
-
+  const Home =( ) => {
+    
   let [fetchedData, updateFetchedData] = useState([]);
   let { info, results } = fetchedData;
   let [pageNumber, updatePageNumber] = useState(1);
@@ -23,15 +42,20 @@ function App() {
   let [species, updateSpecies] = useState("");
   
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
+ 
   useEffect(() => {
   (async function () {
     let data = await fetch(api).then((res) => res.json());
     updateFetchedData(data);
   })();
 }, [api]);
+  
+    return(
 
-  return (
+
+
     <div className="App">
+   
     <h1 className="text-center mb-3">Characters</h1>
     <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
     <div className="container">
@@ -46,7 +70,7 @@ function App() {
     />
       <div className="col-lg-8 col-12">
         <div className="row">
-        <Card results={results} />
+        <Card page="/" results={results} />
         </div>
       </div>
     </div>
@@ -56,8 +80,11 @@ function App() {
     pageNumber={pageNumber}
     updatePageNumber={updatePageNumber}
     />
-  </div>
+    </div>
   );
 }
 
+
+
 export default App;
+
