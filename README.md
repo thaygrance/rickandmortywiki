@@ -5,6 +5,8 @@ Essa foi minha primeira aplicação utilizando a api de Rick and Morty e foi uma
 #
 Fiz ele baseado no tutorial escrito disponível em https://www.freecodecamp.org/news/react-js-project-build-a-rick-and-morty-character-wiki/. Usei diversas libraries pela primeira vez seguindo o tutorial e percebi que já tinha os conhecimentos básicos porque as instruções básicas não estão descritos, então precisava ter um conhecimento prévio para executar.
 #
+Um diferencial desse projeto foi utilizar todas as possibilidades de filtros que a api dispõe, além de "trazer" todos os personagens para a aplicação utilizando o recurso de paginação.
+#
 Também foi uma das minhas primeiras experiências utilizando bootstrap na estilização do início ao fim de uma aplicação
 
 # Tecnologias utilizadas -
