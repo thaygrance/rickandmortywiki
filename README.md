@@ -17,6 +17,8 @@ Também foi uma das minhas primeiras experiências utilizando bootstrap na estil
 # link da página -
 https://rickandmortywiki-bythaygrance.netlify.app/
 
+<img alt= "Gif página" align="center" width="500" src="Gravação de tela de 09-12-2021 11_50_12.gif">
+
 # COMO EXECUTAR O PROJETO
 Clone este repositório:
 $ git clone https://github.com/thaygrance/rickandmortywiki.git
